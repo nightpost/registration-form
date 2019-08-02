@@ -1,0 +1,12 @@
+<div *ngIf="parent"
+     class="text-input-wrapper"
+     [formGroup]="parent">
+  <label [for]="inputName">{{title}}</label>
+  <input autocomplete="off"
+         [id]="inputName"
+         [type]="type"
+         [formControl]="componentTextInput">
+  <div class="error-list">
+    <ng-content select="[as-input-error]"></ng-content>
+  </div>
+</div>

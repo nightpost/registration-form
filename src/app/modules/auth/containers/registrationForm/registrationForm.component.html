@@ -1,18 +1,30 @@
-<div class="registration-form-wrapper">RegistrationForm
+<div class="registration-form-wrapper">
   <form [formGroup]="form" (ngSubmit)="onSubmit()" novalidate>
-    <!--<as-text-input-->
-      <!--[type]="emailInputType"-->
-      <!--[title]="emailTitle"-->
-      <!--[parent]="form"-->
-      <!--[inputName]="emailInputField"></as-text-input>-->
-    <!--<as-text-input-->
-      <!--[type]="passwordInputType"-->
-      <!--[title]="passwordTitle"-->
-      <!--[parent]="form"-->
-      <!--[inputName]="passwordInputField"></as-text-input>-->
+    <div class="form-input">
+      <as-text-input
+        [type]="emailInputType"
+        [title]="emailTitle"
+        [parent]="form"
+        [inputName]="emailInputField">
+        <div *ngIf="form.get(emailInputField).hasError('required') && form.get(emailInputField).touched" as-input-error>
+          Email is required*
+        </div>
+      </as-text-input>
+    </div>
+    <div class="form-input">
+      <as-text-input
+        [type]="passwordInputType"
+        [title]="passwordTitle"
+        [parent]="form"
+        [inputName]="passwordInputField">
+        <div *ngIf="form.get(passwordInputField).hasError('required') && form.get(passwordInputField).touched" as-input-error>
+          Password is required*
+        </div>
+      </as-text-input>
+    </div>
     <!--<as-accept-criteria></as-accept-criteria>-->
-    <!--<as-submit-button-->
-      <!--[title]="submitButtonTitle"-->
-      <!--[isDisabled]="form.invalid"></as-submit-button>-->
+    <button class="form-submit-button" type="submit" [disabled]="form.invalid">
+      {{submitButtonTitle}}
+    </button>
   </form>
 </div>

@@ -1,1 +1,22 @@
-/* You can add global styles to this file, and also import other style files */
+html {
+  font-size: 1rem;
+}
+
+html,
+body {
+  height: 100%;
+  -webkit-font-smoothing: subpixel-antialiased;
+}
+body {
+  margin: 0;
+  font-family: Roboto, 'Helvetica Neue', sans-serif;
+}
+
+input {
+  font-size: 1rem;
+  box-sizing: border-box;
+}
+
+html, body, input, div, form {
+  box-sizing: border-box;
+}
