@@ -1,5 +1,6 @@
 module.exports = {
   preset: 'jest-preset-angular',
+  roots: ['src'],
   testURL: 'http://localhost',
   setupFilesAfterEnv: ['<rootDir>/src/setupJest.ts'],
   globals: {
@@ -13,7 +14,9 @@ module.exports = {
     '^.+\\.(ts|js|html)$': 'ts-jest'
   },
   moduleNameMapper: {
-    '@registration-form-env': '<rootDir>/src/environments/environment.ts'
+    '@auth/(.*)': '<rootDir>/src/app/modules/auth/$1',
+    '@common/(.*)': '<rootDir>/src/app/modules/common/$1',
+    '@env': '<rootDir>/src/environments/environment.ts'
   },
   testMatch: ['<rootDir>/src/**/+(*.)+(spec|test).+(ts|js)?(x)'],
   testEnvironment: 'jest-environment-jsdom-thirteen',

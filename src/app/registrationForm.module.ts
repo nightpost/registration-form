@@ -1,22 +1,21 @@
 import { BrowserModule } from '@angular/platform-browser';
 import { NgModule } from '@angular/core';
-import { RouterModule, Routes } from '@angular/router';
+import { RouterModule } from '@angular/router';
+import { RegistrationFormRoutingModule } from './registrationFormRouting.module';
+import { AuthModule } from './modules/auth/auth.module';
 
-import { RegistrationFormComponent } from './registrationForm.component';
-
-const routes: Routes = [
-  { path: '', redirectTo: '/', pathMatch: 'full' }
-];
+import { AppComponent } from './containers/app-root/app.component';
 
 @NgModule({
   declarations: [
-    RegistrationFormComponent
+    AppComponent
   ],
   imports: [
     BrowserModule,
-    RouterModule.forRoot(routes)
+    AuthModule,
+    RegistrationFormRoutingModule
   ],
   exports: [RouterModule],
-  bootstrap: [RegistrationFormComponent]
+  bootstrap: [AppComponent]
 })
 export class RegistrationFormModule { }

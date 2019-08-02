@@ -8,10 +8,12 @@
     "downlevelIteration": true,
     "emitDecoratorMetadata": true,
     "experimentalDecorators": true,
+    "allowJs": true,
     "module": "esnext",
     "moduleResolution": "node",
     "importHelpers": true,
     "target": "es2015",
+    "types": ["jest"],
     "typeRoots": [
       "node_modules/@types"
     ],
@@ -20,7 +22,9 @@
       "dom"
     ],
     "paths": {
-      "@registration-form-env": ["src/environments/environment.ts"]
+      "@auth/*": ["src/app/modules/auth/*"],
+      "@common/*": ["src/app/modules/common/*"],
+      "@env": ["src/environments/environment.ts"]
     }
   }
 }
