@@ -8,7 +8,7 @@ import { InputType } from '../../models';
   templateUrl: './registrationForm.component.html'
 })
 export class RegistrationFormComponent implements OnInit {
-  readonly emailInputType: InputType = InputType.Text;
+  readonly emailInputType: InputType = InputType.Email;
   readonly passwordInputType: InputType = InputType.Password;
 
   readonly emailTitle: string = 'Email';

@@ -1,0 +1,22 @@
+:host {
+  .text-input-wrapper {
+
+    > label {
+      display: block;
+      margin-bottom: 10px;
+    }
+
+    > input {
+      width: 100%;
+      padding: 0 .5rem;
+      height: 3rem;
+
+      font-size: 1rem;
+      line-height: 3rem;
+    }
+
+    .error-list {
+      height: 2rem;
+    }
+  }
+}

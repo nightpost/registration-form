@@ -1,1 +1,41 @@
-:host {}
+:host {
+  $errorColor: tomato;
+
+  .registration-form-wrapper {
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    height: 100vh;
+
+    > form {
+      width: 100%;
+      max-width: 380px;
+      margin: 2rem;
+
+      .form-input {
+        margin-bottom: 10px;
+      }
+    }
+
+    div[as-input-error] {
+      padding: .2rem 0;
+      font-size: .7rem;
+      color: $errorColor;
+    }
+
+    .form-submit-button {
+      width: 100%;
+      height: 3rem;
+
+      font-size: 1rem;
+
+      background-color: black;
+      color: white;
+      cursor: pointer;
+
+      &:disabled {
+        cursor: default;
+      }
+    }
+  }
+}
