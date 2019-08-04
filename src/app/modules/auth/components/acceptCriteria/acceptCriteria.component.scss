@@ -1,0 +1,28 @@
+:host {
+  $pass: greenyellow;
+  $fail: tomato;
+
+  .accept-criteria-wrapper {
+    display: flex;
+    flex-flow: column nowrap;
+
+    .criterion-row {
+      display: inline-flex;
+      align-items: center;
+      width: 100%;
+      margin: .1rem 0;
+
+      &::before {
+        content: 'done';
+        font-family: 'Material Icons';
+        color: $pass;
+      }
+
+      &.fail::before {
+        content: 'close';
+        font-family: 'Material Icons';
+        color: $fail;
+      }
+    }
+  }
+}

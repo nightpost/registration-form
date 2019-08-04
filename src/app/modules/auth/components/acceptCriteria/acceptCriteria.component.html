@@ -1,0 +1,7 @@
+<div class="accept-criteria-wrapper">
+  <ng-container *ngFor="let criterion of criteria">
+    <div class="criterion-row"
+         [ngClass]="{ 'fail': errors && errors[criterion.mapping] }">
+      {{criterion.description}}</div>
+  </ng-container>
+</div>

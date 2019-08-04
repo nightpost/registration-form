@@ -22,7 +22,10 @@
         </div>
       </as-text-input>
     </div>
-    <!--<as-accept-criteria></as-accept-criteria>-->
+    <as-accept-criteria
+      *ngIf="passwordCriteria?.length"
+      [criteria]="passwordCriteria"
+      [errors]="form.get(passwordInputField).errors"></as-accept-criteria>
     <button class="form-submit-button" type="submit">
       {{submitButtonTitle}}
     </button>
