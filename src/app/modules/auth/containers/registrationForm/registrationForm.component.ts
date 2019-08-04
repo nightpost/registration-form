@@ -1,7 +1,8 @@
 import { Component, OnInit } from '@angular/core';
 import { FormControl, FormGroup } from '@angular/forms';
-import { InputType } from '../../models';
+import { InputType, IPasswordCriteria } from '../../models';
 import { EmailValidator, PasswordValidator } from '../../../../validators';
+import { PasswordErrorType } from '../../../../models';
 
 @Component({
   selector: 'as-registration-form',
@@ -20,6 +21,13 @@ export class RegistrationFormComponent implements OnInit {
   readonly passwordInputField: string = 'password';
 
   form: FormGroup;
+  passwordCriteria: IPasswordCriteria[] = [
+    { mapping: PasswordErrorType.MinLength, description: '8+ characters' },
+    { mapping: PasswordErrorType.MinLowercaseLength, description: 'lowercase letter' },
+    { mapping: PasswordErrorType.MinUppercaseLength, description: 'uppercase letter' },
+    { mapping: PasswordErrorType.MinNumberLength, description: 'number' },
+    { mapping: PasswordErrorType.MinSpecialCharacterLength, description: 'special character' },
+  ];
 
   ngOnInit(): void {
     this.form = this.buildForm();

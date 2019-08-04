@@ -1,5 +1,7 @@
 :host {
   $errorColor: tomato;
+  $buttonTextColor: white;
+  $buttonBackgroundColor: black;
 
   .registration-form-wrapper {
     display: flex;
@@ -26,11 +28,12 @@
     .form-submit-button {
       width: 100%;
       height: 3rem;
+      margin-top: 2rem;
 
       font-size: 1rem;
 
-      background-color: black;
-      color: white;
+      background-color: $buttonBackgroundColor;
+      color: $buttonTextColor;
       cursor: pointer;
 
       &:disabled {
