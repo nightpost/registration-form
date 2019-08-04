@@ -1,6 +1,7 @@
 import { Component, OnInit } from '@angular/core';
-import { FormControl, FormGroup, Validators } from '@angular/forms';
+import { FormControl, FormGroup } from '@angular/forms';
 import { InputType } from '../../models';
+import { EmailValidator, PasswordValidator } from '../../../../validators';
 
 @Component({
   selector: 'as-registration-form',
@@ -26,8 +27,8 @@ export class RegistrationFormComponent implements OnInit {
 
   private buildForm(): FormGroup {
     return new FormGroup({
-      [this.emailInputField]: new FormControl('', Validators.required),
-      [this.passwordInputField]: new FormControl('', Validators.required)
+      [this.emailInputField]: new FormControl('', EmailValidator.emailValidator()),
+      [this.passwordInputField]: new FormControl('', PasswordValidator.passwordValidator())
     });
   }
 
