@@ -1,13 +1,13 @@
 <div class="registration-form-wrapper">
-  <form [formGroup]="form" (ngSubmit)="onSubmit()" novalidate>
+  <form [formGroup]="form" (ngSubmit)="onSubmit(registrationForm)" novalidate #registrationForm="ngForm">
     <div class="form-input">
       <as-text-input
         [type]="emailInputType"
         [title]="emailTitle"
         [parent]="form"
         [inputName]="emailInputField">
-        <div *ngIf="form.get(emailInputField).hasError('required') && form.get(emailInputField).touched" as-input-error>
-          Email is required*
+        <div *ngIf="registrationForm.submitted && emailInputControl.errors" class="first-error" as-input-error>
+          {{ getFirstError(emailInputControl.errors, emailInputField) }}
         </div>
       </as-text-input>
     </div>
@@ -17,8 +17,8 @@
         [title]="passwordTitle"
         [parent]="form"
         [inputName]="passwordInputField">
-        <div *ngIf="form.get(passwordInputField).hasError('required') && form.get(passwordInputField).touched" as-input-error>
-          Password is required*
+        <div *ngIf="registrationForm.submitted && passwordInputControl.errors" class="first-error" as-input-error>
+          {{ getFirstError(passwordInputControl.errors, passwordInputField) }}
         </div>
       </as-text-input>
     </div>
@@ -27,7 +27,7 @@
       [criteria]="passwordCriteria"
       [errors]="form.get(passwordInputField).errors"></as-accept-criteria>
     <button class="form-submit-button" type="submit">
-      {{submitButtonTitle}}
+      {{ submitButtonTitle }}
     </button>
   </form>
 </div>
