@@ -1,6 +1,6 @@
-import { PasswordErrorType } from '../../../models';
+import { EmailErrorType, PasswordErrorType } from '../../../models';
 
-export interface IPasswordCriteria {
-  mapping: PasswordErrorType;
+export interface IFieldCriteria {
+  mapping: PasswordErrorType | EmailErrorType;
   description: string;
 }

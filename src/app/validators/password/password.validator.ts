@@ -17,7 +17,7 @@ export class PasswordValidator {
   static passwordValidator(): ValidatorFn {
     return (control: FormControl): ValidationErrors => {
       const validationErrors = [];
-      const testValue = control.value;
+      const testValue = control.value || '';
 
       if (!PasswordValidator.minLengthRegExp.test(testValue)) {
         validationErrors.push(PasswordErrorType.MinLength);
